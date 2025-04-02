@@ -1,7 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+
+const pageTitles = {
+    '/': 'Dashboard',
+    '/analytics': 'Analytics',
+    '/dealroom': 'Dealroom',
+    '/connect': 'Connect',
+    '/profile': 'Profile',
+    '/settings': 'Settings',
+};
 
 const NavbarPg = () => {
+
+    const location = useLocation();
+    const pageTitle = pageTitles[location.pathname] || 'Page';
+
     return (
         <div>
             <nav className="bg-gray-800">
@@ -14,6 +27,12 @@ const NavbarPg = () => {
                             </div>
 
                         </div>
+
+
+                        <div className="absolute left-1/2 transform -translate-x-1/2 text-white text-lg font-semibold ">
+                            {pageTitle}
+                        </div>
+
                         <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                             {/* <button type="button" className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
                                 <span className="absolute -inset-1.5"></span>
