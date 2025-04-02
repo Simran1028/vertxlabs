@@ -23,19 +23,19 @@ const Profile = () => {
 
         </ul>
 
-        <div classNameName='p-6'>
-          <div classNameName='font-bold text-2xl pb-3'>
+        <div className='p-6'>
+          <div className='font-bold text-2xl pb-3'>
             OVERVIEW
           </div>
-          <div classNameName='rounded-lg border-2 flex flex-1'>
-            <div>
+          <div className='rounded-lg border-2 flex flex-1 w-full'>
+            <div className='w-1/4'>
               <img
                 src='https://via.placeholder.com/200'
                 alt='Profile Pic'
                 classNameName='rounded-full w-20 h-20 object-cover'
               />
             </div>
-            <div>
+            <div className='w-3/4'>
               <div>Name: John Doe</div>
               <div>Email: john.doe@example.com</div>
               <div>Location: New York, NY</div>
@@ -43,12 +43,12 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        <div classNameName='flex flex-1 p-6 w-full gap-3'>
-          <div classNameName='font-bold rounded-lg text-lg pb-3 w-1/2 border-2 p-2'>
+        <div className='flex flex-1 p-6 w-full gap-3'>
+          <div className='font-bold rounded-lg text-lg pb-3 w-1/2 border-2 p-2'>
             Portfolio
 
           </div>
-          <div classNameName='font-bold rounded-lg text-lg pb-3 w-1/2 border-2 p-2' >
+          <div className='font-bold rounded-lg text-lg pb-3 w-1/2 border-2 p-2' >
             Experience
           </div>
         </div>
