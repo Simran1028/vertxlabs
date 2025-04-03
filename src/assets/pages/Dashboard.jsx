@@ -4,7 +4,8 @@ import Layout from '../components/Layout'
 const Dashboard = () => {
   return (
     <Layout>
-      Dashboard
+      <div className='md:ml-64 text-white'> Dashboard</div>
+     
     </Layout>
 
   )

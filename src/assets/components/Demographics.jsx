@@ -11,6 +11,7 @@ export const data = [
   ["RU", 700],
 ];
 
+
 export function Demographics() {
   return (
     <Chart
@@ -26,9 +27,10 @@ export function Demographics() {
           },
         },
       ]}
+     
       chartType="GeoChart"
       width="90%"
-      height="200px"
+      height="220px"
       data={data}
     />
   );

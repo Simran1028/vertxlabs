@@ -4,7 +4,8 @@ import Layout from '../components/Layout'
 const Connect = () => {
   return (
    <Layout>
-    Connect
+         <div className='md:ml-64 text-white'> Connect</div>
+
    </Layout>
   )
 }
