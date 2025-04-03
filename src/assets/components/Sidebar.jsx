@@ -129,7 +129,7 @@ const Sidebar = () => {
             </button>
             
        
-            <div className={`fixed inset-y-0 left-0 z-40 w-64 bg-white p-4 shadow-xl transition-transform md:static md:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+            <div className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#000] text-white p-4 shadow-xl transition-transform md:static md:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <nav className="flex flex-col gap-2 font-sans text-base font-normal">
                     {menuItems.map(({ name, to, icon }, index) => {
                         const isActive = location.pathname === to;

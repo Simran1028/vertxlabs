@@ -10,7 +10,7 @@ import twitter from '../../images/twitter.png'
 const Profile = () => {
   return (
     <Layout>
-      <div>
+      <div >
         <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
           <li className="me-2">
             <a href="/profile" aria-current="page" className="inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500">Overview</a>
@@ -27,11 +27,11 @@ const Profile = () => {
 
         </ul>
 
-        <div className='p-6'>
+        <div className='p-6  text-white'>
           <div className='font-bold text-2xl pb-3'>
             OVERVIEW
           </div>
-          <div className='rounded-lg border-2 flex flex-1 w-full bg-black'>
+          <div className='rounded-lg border-2 flex flex-1  w-full bg-[#000]'>
             <div className='w-1/4'>
               <img
                 src={person}
@@ -51,12 +51,12 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        <div className='flex flex-1 p-6 w-full gap-3'>
-          <div className='font-bold rounded-lg text-lg pb-3 w-1/2 border-2 p-2'>
+        <div className='flex flex-1 p-6 w-full gap-3 text-white'>
+          <div className='font-bold rounded-lg text-lg pb-3 w-1/2 border-2 p-2 bg-[#000]'>
             Founded companies
 
           </div>
-          <div className='font-bold rounded-lg text-lg pb-3 w-1/2 border-2 p-2' >
+          <div className='font-bold rounded-lg text-lg pb-3 w-1/2 border-2 p-2 bg-[#000]' >
             Experience
           </div>
         </div>

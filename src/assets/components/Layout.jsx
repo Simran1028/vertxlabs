@@ -4,7 +4,7 @@ import NavbarPg from './NavbarPg'
 
 const Layout = ({ children }) => {
     return (
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col h-screen bg-[#1D1D1D]">
             <NavbarPg />
             <div className="flex flex-1">
                 <Sidebar />
