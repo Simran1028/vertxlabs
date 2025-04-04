@@ -45,7 +45,7 @@ const Sidebar = () => {
                     </Link>
                 </div>
 
-                <div className='hidden  h-161 md:left-0 md:w-64 md:flex md:flex-col bg-[#000] text-gray-500  p-4 shadow-xl border border-gray-700 border-t-0 border-b-0'>
+                <div className='hidden  h-auto md:left-0 md:w-64 md:flex md:flex-col bg-[#000] text-gray-500  p-4 shadow-xl border border-gray-700 border-t-0 border-b-0'>
                     <nav className="flex flex-col gap-2 font-sans text-base font-normal">
                         {menuItems.map(({ name, to, icon }, index) => {
                             const isActive = location.pathname === to;
@@ -79,9 +79,7 @@ const Sidebar = () => {
                                 className={`flex flex-col items-center p-2 transition-all ${isActive ? 'text-white' : 'text-gray-500'
                                     }`}
                             >
-                                {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                                    <path d={icon} />
-                                </svg> */}
+                              
                                 {icon}
                                 <span className="text-xs">{name}</span>
                             </Link>

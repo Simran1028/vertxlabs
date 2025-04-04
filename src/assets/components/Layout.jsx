@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
             <NavbarPg />
             <div className="flex flex-1">
                 <Sidebar />
-                <div className="flex-1">
+                <div className="flex-1 overflow-hidden">
                     {children}
                 </div>
             </div>
