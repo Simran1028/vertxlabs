@@ -2,8 +2,7 @@
 import React, { Component } from 'react';
 import CanvasJSReact from '@canvasjs/react-charts';
 
- 
-var CanvasJS = CanvasJSReact.CanvasJS;
+
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 class Linechart extends Component{
 	render() {

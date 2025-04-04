@@ -74,7 +74,7 @@ const Analytics = () => {
 
           <div
             onClick={() => setActiveTab('more')}
-            className={`w-32  border-l border-gray-700 text-center cursor-pointer h-full flex justify-center items-center ${activeTab === 'more' ? 'text-white' : ''
+            className={`w-28  border-l border-gray-700 text-center cursor-pointer h-full flex justify-center items-center ${activeTab === 'more' ? 'text-white' : ''
               }`}
           >
             More

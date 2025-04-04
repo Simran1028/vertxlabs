@@ -64,21 +64,8 @@ const Profile = () => {
         ))}
       </div>
 
-      {/* Desktop View Tabs */}
-      {/* <div className="hidden md:flex text-sm font-medium text-gray-400 border-b border-gray-700 items-center h-13">
-        {tabs.map((tab, index) => (
-          <div
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`w-27 ${index !== 0 ? 'border-l border-gray-700' : ''} text-center cursor-pointer flex justify-center items-center h-full ${activeTab === tab ? 'text-white' : ''}`}
-          >
-            {tab.charAt(0).toUpperCase() + tab.slice(1)}
-          </div>
-        ))}
-      </div> */}
-
       <div className="hidden md:flex text-sm font-medium text-gray-400 border-b border-gray-700 items-center h-13">
-        {/* Main Tabs */}
+     
         {['overview', 'portfolio', 'experience', 'media'].map((tab, index) => (
           <div
             key={tab}
@@ -90,10 +77,8 @@ const Profile = () => {
           </div>
         ))}
 
-        {/* Spacer to push 'More' to the right */}
         <div className="flex-1 border-l border-gray-700 h-full" />
 
-        {/* 'More' Tab */}
         <div
           onClick={() => setActiveTab('more')}
           className={`w-28 hidden lg:flex border-l border-gray-700 text-center cursor-pointer justify-center items-center h-full ${activeTab === 'more' ? 'text-white' : ''
