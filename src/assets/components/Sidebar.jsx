@@ -2,16 +2,20 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import person from '../images/person.png';
+import dealroom from '../images/dealroom.png';
+import analytics from '../images/analytics.png';
+import connect from '../images/connect.png';
+import dashboard from '../images/dashboard.png';
 
 
 
 const menuItems = [
-    { name: 'Dashboard', to: '/', icon: 'M2.25 2.25a.75.75...' },
-    { name: 'Analytics', to: '/analytics', icon: 'M7.5 6v.75H5.513...' },
-    { name: 'Dealroom', to: '/dealroom', icon: 'M6.912 3a3 3...' },
-    { name: 'Connect', to: '/connect', icon: 'M6.912 3a3 3...' },
-    { name: 'Profile', to: '/profile', icon: 'M18.685 19.097A9...' },
-    { name: 'Settings', to: '/settings', icon: 'M11.078 2.25c-...' },
+    { name: 'Dashboard', to: '/',   icon: <img src={dashboard} alt="Dashboard" className="w-6 h-6" /> },
+    { name: 'Analytics', to: '/analytics', icon: <img src={analytics} alt="Analytics" className="w-6 h-6" /> },
+    { name: 'Dealroom', to: '/dealroom', icon: <img src={dealroom} alt="Dealroon" className="w-6 h-6" />  },
+    { name: 'Connect', to: '/connect', icon: <img src={connect} alt="Connect" className="w-6 h-6" />  },
+    { name: 'Profile', to: '/profile', icon: <img src={person} alt="Person" className="w-6 h-6" />  },
+    // { name: 'Settings', to: '/settings', icon: <img src={dashboard} alt="Dashboard" className="w-6 h-6" />  },
 ];
 
 const Sidebar = () => {
@@ -75,9 +79,10 @@ const Sidebar = () => {
                                 className={`flex flex-col items-center p-2 transition-all ${isActive ? 'text-white' : 'text-gray-500'
                                     }`}
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                                {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                                     <path d={icon} />
-                                </svg>
+                                </svg> */}
+                                {icon}
                                 <span className="text-xs">{name}</span>
                             </Link>
                         );
