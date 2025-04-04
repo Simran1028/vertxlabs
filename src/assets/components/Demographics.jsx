@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Chart } from "react-google-charts";
 
@@ -11,27 +12,41 @@ export const data = [
   ["RU", 700],
 ];
 
+export const options = {
+  backgroundColor: "#1e1e1e", 
+  datalessRegionColor: "#2c2c2c", 
+  defaultColor: "#00bcd4",
+  legend: {
+    textStyle: { color: "#000" }, 
+  },
+  tooltip: {
+    textStyle: { color: "#000" }, 
+    showColorCode: true,
+  },
+};
 
 export default function Demographics() {
   return (
-    <Chart
-      chartEvents={[
-        {
-          eventName: "select",
-          callback: ({ chartWrapper }) => {
-            const chart = chartWrapper.getChart();
-            const selection = chart.getSelection();
-            if (selection.length === 0) return;
-            const region = data[selection[0].row + 1];
-            console.log("Selected : " + region);
+    <div style={{ width: "100%", height: "500px", borderRadius: "12px", overflow: "hidden", backgroundColor: "#1e1e1e" }}>
+      <Chart
+        chartEvents={[
+          {
+            eventName: "select",
+            callback: ({ chartWrapper }) => {
+              const chart = chartWrapper.getChart();
+              const selection = chart.getSelection();
+              if (selection.length === 0) return;
+              const region = data[selection[0].row + 1];
+              console.log("Selected : " + region);
+            },
           },
-        },
-      ]}
-     
-      chartType="GeoChart"
-      width="90%"
-      height="220px"
-      data={data}
-    />
+        ]}
+        chartType="GeoChart"
+        width="100%"
+        height="100%"
+        data={data}
+        options={options}
+      />
+    </div>
   );
 }

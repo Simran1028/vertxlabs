@@ -1,54 +1,59 @@
 
-import React, { Component } from 'react';
-import {CanvasJSChart} from '@canvasjs/react-charts';
+import React from "react";
+import { Chart } from "react-google-charts";
 
+export const data = [
+  [
+    { type: "number", label: "x" },
+    { type: "number", label: "values" },
+    { id: "i0", type: "number", role: "interval" },
+    { id: "i1", type: "number", role: "interval" },
+    { id: "i2", type: "number", role: "interval" },
+    { id: "i2", type: "number", role: "interval" },
+    { id: "i2", type: "number", role: "interval" },
+    { id: "i2", type: "number", role: "interval" },
+  ],
+  [1, 100, 90, 110, 85, 96, 104, 120],
+  [2, 120, 95, 130, 90, 113, 124, 140],
+  [3, 130, 105, 140, 100, 117, 133, 139],
+  [4, 90, 85, 95, 85, 88, 92, 95],
+  [5, 70, 74, 63, 67, 69, 70, 72],
+  [6, 30, 39, 22, 21, 28, 34, 40],
+  [7, 80, 77, 83, 70, 77, 85, 90],
+  [8, 100, 90, 110, 85, 95, 102, 110],
+];
 
-// var CanvasJSChart = CanvasJSReact.CanvasJSChart;
-class Linechart extends Component{
-	render() {
-		const options = {
-      theme:'dark1',
-			animationEnabled: true,
-			title:{
-				text: "Monthly Sales - 2025"
-			},
-      height: 250, 
-			axisX: {
-				valueFormatString: "MMM"
-			},
-			axisY: {
-				title: "Sales (in USD)",
-				prefix: "$"
-			},
-			data: [{
-				yValueFormatString: "$#,###",
-				xValueFormatString: "MMMM",
-				type: "spline",
-				dataPoints: [
-					{ x: new Date(2017, 0), y: 25060 },
-					{ x: new Date(2017, 1), y: 27980 },
-					{ x: new Date(2017, 2), y: 42800 },
-					{ x: new Date(2017, 3), y: 32400 },
-					{ x: new Date(2017, 4), y: 35260 },
-					{ x: new Date(2017, 5), y: 33900 },
-					{ x: new Date(2017, 6), y: 40000 },
-					{ x: new Date(2017, 7), y: 52500 },
-					{ x: new Date(2017, 8), y: 32300 },
-					{ x: new Date(2017, 9), y: 42000 },
-					{ x: new Date(2017, 10), y: 37160 },
-					{ x: new Date(2017, 11), y: 38400 }
-				]
-			}]
-		}
-		return (
-		<div>
-			<CanvasJSChart options = {options}
- 
-				/* onRef={ref => this.chart = ref} */
-			/>
-			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-		</div>
-		);
-	}
+export const options = {
+  title: "Bars, default",
+  curveType: "function",
+  series: [{ color: "#D9544C" }],
+  intervals: { style: "bars" },
+  legend: "none",
+  backgroundColor: "#1e1e1e",
+  hAxis: {
+    textStyle: { color: "#fff" },
+    gridlines: { color: "#444" }
+  },
+  vAxis: {
+    textStyle: { color: "#fff" },
+    gridlines: { color: "#444" }
+  },
+  titleTextStyle: {
+    color: "#fff",
+    fontSize: 18
+  }
+};
+
+export default function Linechart() {
+  return (
+    <div style={{ borderRadius: '10px', overflow: 'hidden' }}>
+    <Chart
+      chartType="LineChart"
+      width="100%"
+      height="400px"
+      data={data}
+      options={options}
+    />
+  </div>
+  );
 }
-export default Linechart;                              
