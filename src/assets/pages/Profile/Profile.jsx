@@ -23,7 +23,7 @@ const Profile = () => {
       case "overview":
         return (
           // <div className="text-white bg-black min-h-screen px-4 sm:px-6 md:px-10 pt-5 max-w-screen-xl mx-auto ">
-          <div className="text-white px-4 md:px-20 pt-3">
+          <div className="text-white px-4 md:px-15 pt-3">
 
             <h1 className="font-manrope font-extrabold text-2xl md:text-3xl pb-5 ">
               OVERVIEW

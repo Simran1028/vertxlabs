@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 const Connect = () => {
   return (
    <Layout>
-         <div className=' text-white'> Connect</div>
+         <div className=' text-white p-2'> Connect</div>
 
    </Layout>
   )

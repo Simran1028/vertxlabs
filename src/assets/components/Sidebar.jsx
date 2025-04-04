@@ -24,7 +24,7 @@ const Sidebar = () => {
     return (
         <>
             <div className='flex'>
-                <div className="hidden md:flex flex-col  w-20  p-4 flex  items-center">
+                <div className="hidden md:flex flex-col  w-16  p-4 flex  items-center">
                    
                     <Link to='/profile'>
                         <button
@@ -45,7 +45,7 @@ const Sidebar = () => {
                     </Link>
                 </div>
 
-                <div className='hidden  h-auto md:left-0 md:w-64 md:flex md:flex-col bg-[#000] text-gray-500  p-4 shadow-xl border border-gray-700 border-t-0 border-b-0'>
+                <div className='hidden  h-auto md:left-0 md:w-58 md:flex md:flex-col bg-[#000] text-gray-500  p-4 shadow-xl border border-gray-700 border-t-0 border-b-0'>
                     <nav className="flex flex-col gap-2 font-sans text-base font-normal">
                         {menuItems.map(({ name, to, icon }, index) => {
                             const isActive = location.pathname === to;

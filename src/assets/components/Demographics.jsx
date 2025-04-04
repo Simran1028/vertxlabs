@@ -27,7 +27,7 @@ export const options = {
 
 export default function Demographics() {
   return (
-    <div style={{ width: "100%", height: "500px", borderRadius: "12px", overflow: "hidden", backgroundColor: "#1e1e1e" }}>
+    <div style={{ width: "100%", height: "200px", borderRadius: "12px", overflow: "hidden", backgroundColor: "#1e1e1e" }}>
       <Chart
         chartEvents={[
           {
@@ -43,7 +43,7 @@ export default function Demographics() {
         ]}
         chartType="GeoChart"
         width="100%"
-        height="100%"
+        height="200px"
         data={data}
         options={options}
       />

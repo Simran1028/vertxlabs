@@ -29,7 +29,7 @@ export const options = {
   series: [{ color: "#D9544C" }],
   intervals: { style: "bars" },
   legend: "none",
-  backgroundColor: "#1e1e1e",
+  backgroundColor: "#000",
   hAxis: {
     textStyle: { color: "#fff" },
     gridlines: { color: "#444" }
@@ -50,7 +50,7 @@ export default function Linechart() {
     <Chart
       chartType="LineChart"
       width="100%"
-      height="400px"
+      height="250px"
       data={data}
       options={options}
     />

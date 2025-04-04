@@ -38,7 +38,7 @@ const NavbarPg = () => {
                 </Link>
 
                
-                <img className="w-10 h-10" src={logo1} alt="Logo" />
+                <img className="w-8 h-10" src={logo1} alt="Logo" />
 
             
                 <div className="relative">
@@ -73,12 +73,12 @@ const NavbarPg = () => {
 
             <div className="hidden md:flex w-full h-full items-center">
 
-                <div className=" border-gray-700 flex justify-center items-center h-full w-20">
+                <div className=" border-gray-700 flex justify-center items-center h-full w-16">
                     <img className="w-10 h-10" src={logo1} alt="Logo" />
                 </div>
 
 
-                <div className="border-l border-gray-700 flex justify-center items-center text-lg font-semibold h-full w-64">
+                <div className="border-l border-gray-700 flex justify-center items-center text-lg font-semibold h-full w-58">
                     VertxLabs
                 </div>
 
