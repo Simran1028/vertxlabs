@@ -19,7 +19,7 @@ const NavbarPg = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav className="bg-black text-white border-b border-gray-500 w-full h-13 flex items-center justify-between ">
+        <nav className="bg-black text-white border-b border-gray-700 w-full h-13 flex items-center justify-between ">
 
 
             <div className="w-full flex items-center justify-between md:hidden px-4">
@@ -37,10 +37,10 @@ const NavbarPg = () => {
                     </button>
                 </Link>
 
-                {/* Centered logo */}
+               
                 <img className="w-10 h-10" src={logo1} alt="Logo" />
 
-                {/* 3-dot dropdown menu */}
+            
                 <div className="relative">
                     <button
                         onClick={() => setMenuOpen(!menuOpen)}
@@ -73,27 +73,27 @@ const NavbarPg = () => {
 
             <div className="hidden md:flex w-full h-full items-center">
 
-                <div className=" border-gray-500 flex justify-center items-center h-full w-20">
+                <div className=" border-gray-700 flex justify-center items-center h-full w-20">
                     <img className="w-10 h-10" src={logo1} alt="Logo" />
                 </div>
 
 
-                <div className="border-l border-gray-500 flex justify-center items-center text-lg font-semibold h-full w-64">
+                <div className="border-l border-gray-700 flex justify-center items-center text-lg font-semibold h-full w-64">
                     VertxLabs
                 </div>
 
 
-                <div className="border-l border-gray-500 flex items-center h-full flex-1 pl-4">
+                <div className="border-l border-gray-700 flex items-center h-full flex-1 pl-4">
                     {pageTitle}
                 </div>
 
 
-                <div className="border-l border-gray-500 flex justify-center items-center h-full w-32">
+                <div className="border-l border-gray-700 flex justify-center items-center h-full w-32">
                     <span>Activity</span>
                 </div>
 
 
-                <div className="border-l border-gray-500 flex justify-center items-center h-full w-32">
+                <div className="border-l border-gray-700 flex justify-center items-center h-full w-32">
                     <Link to="/logout">Logout</Link>
                 </div>
             </div>
