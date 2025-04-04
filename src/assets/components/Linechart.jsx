@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react';
-import CanvasJSReact from '@canvasjs/react-charts';
+import {CanvasJSChart} from '@canvasjs/react-charts';
 
 
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+// var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 class Linechart extends Component{
 	render() {
 		const options = {
