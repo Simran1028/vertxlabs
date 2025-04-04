@@ -1,72 +1,112 @@
-import React from 'react'
-import Layout from '../../components/Layout'
-import link from '../../images/link.png'
-import person from '../../images/person.png'
-import gmail from '../../images/gmail.png'
-import twitter from '../../images/twitter.png'
 
-
+import React, { useState } from 'react';
+import Layout from '../../components/Layout';
+import link from '../../images/link.png';
+import person from '../../images/person.png';
+import gmail from '../../images/gmail.png';
+import twitter from '../../images/twitter.png';
 
 const Profile = () => {
-  return (
-    <Layout>
-      <div >
-        <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
-          <li className="me-2">
-            <a href="/profile" aria-current="page" className="inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500">Overview</a>
-          </li>
-          <li className="me-2">
-            <a href="#" className="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">Portfolio</a>
-          </li>
-          <li className="me-2">
-            <a href="#" className="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">Experience</a>
-          </li>
-          <li className="me-2">
-            <a href="#" className="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">Media</a>
-          </li>
+  const [activeTab, setActiveTab] = useState('overview');
 
-        </ul>
-
-        <div className='text-white pl-20 pr-20'>
-          <div className='font-manrope font-extrabold text-[28px] leading-none tracking-[-0.04em] pb-10'
-          >
-            OVERVIEW
-          </div>
-          <div className='p-10 rounded-lg border-2 flex flex-col sm:flex-row flex-1  w-full bg-[#000]'>
-            <div className='w-full sm:w-1/4 flex justify-left sm:justify-left'>
-              <img
-                src={person}
-                alt='Profile Pic'
-                classNameName='rounded-full w-20 h-20 object-cover'
-              />
-            </div>
-            <div className='w-full sm:w-3/4 text-left sm:text-left'>
-              <div className='font-manrope font-bold text-[24px] leading-none tracking-normal pb-2
-'>Mr A</div>
-              <div className='font-manrope font-medium text-[12px] leading-none tracking-normal pb-3'>Co-Founder & CEO @vertx</div>
-              <div className='font-jetbrains font-medium text-[8px] leading-none tracking-normal pb-5
-'><span className='bg-white text-black'>Enterpreneur</span></div>
-              <div className='flex justify-left gap-3'>
-                <img src={link} />
-                <img src={gmail} />
-                <img src={twitter} />
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'overview':
+        return (
+          <div className="text-white pl-4 pr-4 md:pl-20 md:pr-20 pt-6">
+            <div className="font-manrope font-extrabold text-[28px] pb-10">OVERVIEW</div>
+            <div className="p-10 rounded-lg border-2 flex flex-col sm:flex-row bg-black">
+              <div className="sm:w-1/4 mb-4 sm:mb-0">
+                <img src={person} alt="Profile" className="rounded-full w-20 h-20" />
+              </div>
+              <div className="sm:w-3/4 text-left">
+                <div className="text-[24px] font-bold">Mr A</div>
+                <div className="text-[12px] font-medium">Co-Founder & CEO @vertx</div>
+                <div className="text-[8px] mt-1"><span className="bg-white text-black px-1">Entrepreneur</span></div>
+                <div className="flex gap-3 mt-4">
+                  <img src={link} />
+                  <img src={gmail} />
+                  <img src={twitter} />
+                </div>
               </div>
             </div>
-          </div>
-          <div className='mt-5 flex flex-col sm:flex-row flex-1 w-full gap-3 text-white'>
-            <div className='font-bold rounded-lg text-lg pb-3 w-full sm:w-1/2 border-2 p-2 bg-[#000]'>
-              Founded companies
-
-            </div>
-            <div className='font-bold rounded-lg text-lg pb-3 w-full sm:w-1/2 border-2 p-2 bg-[#000]' >
-              Experience
+            <div className="mt-5 flex flex-col sm:flex-row gap-3">
+              <div className="w-full sm:w-1/2 border-2 rounded-lg p-4 text-lg font-bold bg-black">Founded companies</div>
+              <div className="w-full sm:w-1/2 border-2 rounded-lg p-4 text-lg font-bold bg-black">Experience</div>
             </div>
           </div>
-        </div>
+        );
+      case 'portfolio':
+      case 'experience':
+      case 'media':
+        return (
+          <div className="text-white text-center py-10">Content for {activeTab} coming soon!</div>
+        );
+      default:
+        return null;
+    }
+  };
 
+  const tabs = ['overview', 'portfolio', 'experience', 'media'];
+
+  return (
+    <Layout>
+      {/* Mobile View Tabs */}
+      <div className="flex md:hidden justify-between border-b border-gray-700 text-sm font-medium text-center text-gray-400">
+        {tabs.map((tab) => (
+          <div
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`flex-1 text-center py-3 cursor-pointer ${activeTab === tab ? 'border-b-2 border-white text-white' : ''}`}
+          >
+            {tab.charAt(0).toUpperCase() + tab.slice(1)}
+          </div>
+        ))}
       </div>
-    </Layout>
-  )
-}
 
-export default Profile
+      {/* Desktop View Tabs */}
+      {/* <div className="hidden md:flex text-sm font-medium text-gray-400 border-b border-gray-700 items-center h-13">
+        {tabs.map((tab, index) => (
+          <div
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`w-27 ${index !== 0 ? 'border-l border-gray-700' : ''} text-center cursor-pointer flex justify-center items-center h-full ${activeTab === tab ? 'text-white' : ''}`}
+          >
+            {tab.charAt(0).toUpperCase() + tab.slice(1)}
+          </div>
+        ))}
+      </div> */}
+
+      <div className="hidden md:flex text-sm font-medium text-gray-400 border-b border-gray-700 items-center h-13">
+        {/* Main Tabs */}
+        {['overview', 'portfolio', 'experience', 'media'].map((tab, index) => (
+          <div
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`w-26 ${index !== 0 ? 'border-l border-gray-700' : ''} text-center cursor-pointer flex justify-center items-center h-full ${activeTab === tab ? 'text-white' : ''
+              }`}
+          >
+            {tab.charAt(0).toUpperCase() + tab.slice(1)}
+          </div>
+        ))}
+
+        {/* Spacer to push 'More' to the right */}
+        <div className="flex-1 border-l border-gray-700 h-full" />
+
+        {/* 'More' Tab */}
+        <div
+          onClick={() => setActiveTab('more')}
+          className={`w-28 hidden lg:flex border-l border-gray-700 text-center cursor-pointer justify-center items-center h-full ${activeTab === 'more' ? 'text-white' : ''
+            }`}
+        >
+          More
+        </div>
+      </div>
+
+
+      {renderContent()}
+    </Layout>
+  );
+};
+
+export default Profile;

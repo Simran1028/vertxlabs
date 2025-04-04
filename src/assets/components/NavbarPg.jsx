@@ -88,12 +88,12 @@ const NavbarPg = () => {
                 </div>
 
 
-                <div className="border-l border-gray-700 flex justify-center items-center h-full w-32">
+                <div className="border-l border-gray-700 flex justify-center items-center h-full w-28">
                     <span>Activity</span>
                 </div>
 
 
-                <div className="border-l border-gray-700 flex justify-center items-center h-full w-32">
+                <div className="border-l border-gray-700 flex justify-center items-center h-full w-28">
                     <Link to="/logout">Logout</Link>
                 </div>
             </div>

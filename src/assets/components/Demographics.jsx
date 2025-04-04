@@ -12,7 +12,7 @@ export const data = [
 ];
 
 
-export function Demographics() {
+export default function Demographics() {
   return (
     <Chart
       chartEvents={[
