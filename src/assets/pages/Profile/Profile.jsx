@@ -22,8 +22,8 @@ const Profile = () => {
     switch (activeTab) {
       case "overview":
         return (
-          // <div className="text-white bg-black min-h-screen px-4 sm:px-6 md:px-10 pt-5 max-w-screen-xl mx-auto ">
-          <div className="text-white px-4 md:px-15 pt-3">
+          
+          <div className="text-white px-4 md:px-15 pt-3 h-auto">
 
             <h1 className="font-manrope font-extrabold text-2xl md:text-3xl pb-5 ">
               OVERVIEW
@@ -52,7 +52,7 @@ const Profile = () => {
 
 
             <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
-              {/* Founded Companies */}
+           
               <div className="bg-gray-900 text-white p-6 rounded-lg border border-gray-700 h-full">
                 <h2 className="text-lg md:text-xl font-semibold">Founded Companies</h2>
                 <p className="text-4xl md:text-5xl font-bold mt-2">02</p>
