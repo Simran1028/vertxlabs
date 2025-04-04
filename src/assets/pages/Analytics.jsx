@@ -17,7 +17,9 @@ const Analytics = () => {
               <Linechart />
             </div>
             <div className="w-1/4 rounded-lg border-2 mt-6">Hello</div>
+            <Demographics/>
           </div>
+           
         );
       case 'demographics':
         return (

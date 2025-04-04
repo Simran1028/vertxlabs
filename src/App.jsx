@@ -6,7 +6,7 @@ import Dealroom from './assets/pages/Dealroom'
 import Connect from './assets/pages/Connect'
 import Profile from './assets/pages/Profile/Profile'
 import Settings from './assets/pages/Settings'
-import Overview from './assets/pages/Profile/Overview'
+
 
 const App = () => {
   return (
@@ -17,7 +17,6 @@ const App = () => {
         <Route path="/dealroom" element={<Dealroom />} />
         <Route path="/connect" element={<Connect />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/overview" element={<Overview />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
