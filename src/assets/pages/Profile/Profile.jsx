@@ -93,7 +93,7 @@ const Profile = () => {
               </div>
 
              
-              <div className= "hidden md:block bg-gray-900 text-white p-6 rounded-lg border border-gray-700 h-full">
+              <div className= "hidden lg:block bg-gray-900 text-white p-6 rounded-lg border border-gray-700 h-full">
                 <h2 className="text-lg md:text-xl font-semibold">Experience</h2>
                 <p className="text-4xl md:text-5xl font-bold mt-2">03</p>
 
@@ -131,7 +131,7 @@ const Profile = () => {
   return (
     <Layout>
 
-      <div className="flex md:hidden justify-between border-b border-gray-700 text-sm font-medium text-center text-gray-400">
+      <div className="flex lg:hidden justify-between border-b border-gray-700 text-sm font-medium text-center text-gray-400">
         {tabs.map((tab) => (
           <div
             key={tab}
