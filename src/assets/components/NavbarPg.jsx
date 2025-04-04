@@ -1,6 +1,8 @@
-import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import logo1 from '../images/logo1.png'
+
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import logo1 from '../images/logo1.png';
+import { EllipsisVertical } from 'lucide-react';
 
 const pageTitles = {
     '/': 'Dashboard',
@@ -12,77 +14,93 @@ const pageTitles = {
 };
 
 const NavbarPg = () => {
-
     const location = useLocation();
     const pageTitle = pageTitles[location.pathname] || 'Page';
+    const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <div>
-            <nav className="bg-[#000] border-1 border-solid border-b-white">
-                <div className="mx-auto  px-2 sm:px-6 lg:px-8">
-                    <div className="relative flex h-16 items-center justify-between">
+        <nav className="bg-black text-white border-b border-gray-500 w-full h-13 flex items-center justify-between ">
 
-                        <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                            <div className="flex shrink-0 items-center">
-                                <img className=" w-auto" src={logo1} alt="Your Company" />
-                            </div>
 
+            <div className="w-full flex items-center justify-between md:hidden px-4">
+
+                <Link to="/profile">
+                    <button
+                        type="button"
+                        className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    >
+                        <img
+                            className="size-10 rounded-full"
+                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                            alt="Profile"
+                        />
+                    </button>
+                </Link>
+
+                {/* Centered logo */}
+                <img className="w-10 h-10" src={logo1} alt="Logo" />
+
+                {/* 3-dot dropdown menu */}
+                <div className="relative">
+                    <button
+                        onClick={() => setMenuOpen(!menuOpen)}
+                        className="focus:outline-none"
+                    >
+                        <EllipsisVertical className="w-6 h-6" />
+                    </button>
+
+                    {menuOpen && (
+                        <div className="absolute right-0 mt-2 bg-white text-black rounded-md shadow-lg w-32 z-50">
+                            <Link
+                                to="/activity"
+                                className="block px-4 py-2 hover:bg-gray-200"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                Activity
+                            </Link>
+                            <Link
+                                to="/logout"
+                                className="block px-4 py-2 hover:bg-gray-200"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                Logout
+                            </Link>
                         </div>
+                    )}
+                </div>
+            </div>
 
 
-                        <div className="absolute left-1/2 transform -translate-x-1/2 text-white text-lg font-semibold ">
-                            {pageTitle}
-                        </div>
+            <div className="hidden md:flex w-full h-full items-center">
 
-                        <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                            {/* <button type="button" className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
-                                <span className="absolute -inset-1.5"></span>
-                                <span className="sr-only">View notifications</span>
-                                <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
-                                </svg>
-                            </button> */}
-
-
-                            <div className="relative ml-3">
-                                <div>
-                                    <Link to='/profile'>
-                                        <button type="button" className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                            <span className="absolute -inset-1.5"></span>
-                                            <span className="sr-only">Open user menu</span>
-
-                                            <img className="size-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-                                        </button>
-                                    </Link>
-
-                                </div>
-
-                                {/* 
-                                <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
-                                </div> */}
-                            </div>
-                        </div>
-                    </div>
+                <div className=" border-gray-500 flex justify-center items-center h-full w-20">
+                    <img className="w-10 h-10" src={logo1} alt="Logo" />
                 </div>
 
 
-                {/* <div className="sm:hidden" id="mobile-menu">
-                    <div className="space-y-1 px-2 pt-2 pb-3">
+                <div className="border-l border-gray-500 flex justify-center items-center text-lg font-semibold h-full w-64">
+                    VertxLabs
+                </div>
 
-                        <a href="#" className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-                        <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-                        <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-                        <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
-                    </div>
-                </div> */}
-            </nav>
 
-        </div>
-    )
-}
+                <div className="border-l border-gray-500 flex items-center h-full flex-1 pl-4">
+                    {pageTitle}
+                </div>
 
-export default NavbarPg
+
+                <div className="border-l border-gray-500 flex justify-center items-center h-full w-32">
+                    <span>Activity</span>
+                </div>
+
+
+                <div className="border-l border-gray-500 flex justify-center items-center h-full w-32">
+                    <Link to="/logout">Logout</Link>
+                </div>
+            </div>
+        </nav>
+    );
+
+};
+
+export default NavbarPg;
+
